@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux - Our Team</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">Lux</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products & Services</a></li>
+            <li><a href="teams.html">Teams</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+
+
+    <!-- Team Section -->
+    <section class="team" id="teams">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/89.jpg" alt="Mochi" loading="lazy">
+                <h3>Mochi</h3>
+                <p>Role: Leader</p>
+                <p>Expertise: Business Strategy, Leadership</p>
+                <p>Email: mochi@lux.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/74.jpg" alt="Munchy" loading="lazy">
+                <h3>Munchy</h3>
+                <p>Role: Head of Financial Division</p>
+                <p>Expertise: Financial Management, Accounting</p>
+                <p>Email: munchy@lux.com</p>
+                <p>Phone: +1 (987) 654-3210</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/94.jpg" alt="Bertih" loading="lazy">
+                <h3>Bertih</h3>
+                <p>Role: Head of Operation Planning</p>
+                <p>Expertise: Operations, Logistics</p>
+                <p>Email: bertih@lux.com</p>
+                <p>Phone: +1 (234) 567-8910</p>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Berda" loading="lazy">
+                <h3>Berda</h3>
+                <p>Role: Head of Quality Checking</p>
+                <p>Expertise: Quality Assurance, Product Inspection</p>
+                <p>Email: berda@lux.com</p>
+                <p>Phone: +1 (456) 789-0123</p>
+            </div>
+            <!-- Team Member 5 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Berih" loading="lazy">
+                <h3>Berih</h3>
+                <p>Role: Head of Security</p>
+                <p>Expertise: Security Management, Risk Assessment</p>
+                <p>Email: berih@lux.com</p>
+                <p>Phone: +1 (678) 901-2345</p>
+            </div>
+            <!-- Team Member 6 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/77.jpg" alt="Bertam" loading="lazy">
+                <h3>Bertam</h3>
+                <p>Role: Head of IT Security</p>
+                <p>Expertise: Cybersecurity, Data Protection</p>
+                <p>Email: bertam@lux.com</p>
+                <p>Phone: +1 (890) 123-4567</p>
+            </div>
+            <!-- Team Member 7 -->
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/78.jpg" alt="Beikin" loading="lazy"> 
+                <h3>Beikin</h3>
+                <p>Role: Head of Delivery</p>
+                <p>Expertise: Delivery Management, Customer Service</p>
+                <p>Email: beikin@lux.com</p>
+                <p>Phone: +1 (012) 345-6789</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lux. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+    <script src="stateManagement.js"></script>
+
+</body>
+</html>

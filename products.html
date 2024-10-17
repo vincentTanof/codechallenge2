@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux - Products & Services</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Button Styling */
+        .btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e09b00;
+        }
+
+        .btn-clear {
+            margin-top: 20px;
+        }
+
+        /* Cart Section Styling */
+        .cart-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the content horizontally */
+            margin: 40px 0;
+        }
+
+        .cart-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #cart-items {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 400px; /* Set a max width for the cart items */
+        }
+
+        #cart-items li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd; /* Add a separator between cart items */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        #cart-items li img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        #cart-items li div {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">Lux</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products & Services</a></li>
+            <li><a href="teams.html">Teams</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="products-hero">
+        <div class="hero-content">
+            <h1>Our Products & Services</h1>
+            <p>Discover our wide range of quality furniture, designed to suit every need.</p>
+        </div>
+    </section>
+
+    <!-- Products & Services Section -->
+    <section class="products" id="products">
+        <h2>Explore Our Products</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg" alt="Nordviken Chair" loading="lazy">
+                <h3>Nordviken Chair</h3>
+                <p>A high-quality wooden chair with antique stain finish, perfect for any modern home or office.</p>
+                <p class="price">$149.99</p>
+                <button class="btn" onclick="addToCart({ name: 'Nordviken Chair', price: 149.99, image: 'https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg' })">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/images/201/1020142_PE831799_S4.jpg" alt="Modern Dining Set" loading="lazy">
+                <h3>Modern Dining Set</h3>
+                <p>Stylish and durable dining set for contemporary homes, made from premium materials.</p>
+                <p class="price">$499.99</p>
+                <button class="btn" onclick="addToCart({ name: 'Modern Dining Set', price: 499.99, image: 'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/images/201/1020142_PE831799_S4.jpg' })">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/images/743/1074348_PE856162_S5.jpg" alt="IKEA Kallax Shelf Unit" loading="lazy">
+                <h3>IKEA Kallax Shelf Unit</h3>
+                <p>A versatile and sturdy shelving unit, ideal for organizing your living room or office space.</p>
+                <p class="price">$99.99</p>
+                <button class="btn" onclick="addToCart({ name: 'IKEA Kallax Shelf Unit', price: 99.99, image: 'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/images/743/1074348_PE856162_S5.jpg' })">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.id/634f95c6e2151e3eac4d9b83-ikea-table-with-10-drawers-white.jpg" alt="IKEA Table with 10 Drawers" loading="lazy">
+                <h3>IKEA Table with 10 Drawers</h3>
+                <p>Spacious and functional table with 10 drawers, perfect for home offices or craft spaces.</p>
+                <p class="price">$299.99</p>
+                <button class="btn" onclick="addToCart({ name: 'IKEA Table with 10 Drawers', price: 299.99, image: 'https://images-cdn.ubuy.co.id/634f95c6e2151e3eac4d9b83-ikea-table-with-10-drawers-white.jpg' })">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cart Section -->
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul> <!-- This will display the list of products in the cart -->
+        <div class="cart-total">Total: $<span id="cart-total-price">0.00</span></div>
+        <button class="btn btn-clear" onclick="clearCart()">Clear Cart</button> <!-- Styled Clear Cart Button -->
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Customer Reviews</h2>
+        <div class="testimonial-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-box">
+                <blockquote>"The Nordviken Chair is incredibly comfortable and sturdy. It has become my favorite piece of furniture at home."</blockquote>
+                <cite>- John D., Nordviken Chair</cite>
+            </div>
+            <!-- Review 2 -->
+            <div class="testimonial-box">
+                <blockquote>"I love the modern dining set. It's stylish, durable, and perfect for hosting dinner parties."</blockquote>
+                <cite>- Sarah L., Modern Dining Set</cite>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lux. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Add to Cart Function with Quantity Update
+        function addToCart(product) {
+            let cart = localStorage.getItem('cart');
+            cart = cart ? JSON.parse(cart) : [];
+            const existingProduct = cart.find(item => item.name === product.name);
+            
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Increase the quantity if product exists
+            } else {
+                product.quantity = 1; // Set quantity to 1 if it's a new product
+                cart.push(product);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); // Update the cart display after adding an item
+        }
+
+        // Display Cart Items with Quantity and Total Price Calculation
+        function displayCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartList = document.getElementById('cart-items');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+            cartList.innerHTML = ''; // Clear the list before adding new items
+            let totalCost = 0; // To track total price
+
+            cartItems.forEach((item) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div>
+                        <img src="${item.image}" alt="${item.name}">
+                        ${item.name} (x${item.quantity})
+                    </div>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                cartList.appendChild(listItem);
+                totalCost += item.price * item.quantity; // Add to total cost
+            });
+
+            cartTotalPrice.textContent = totalCost.toFixed(2); // Update total price display
+        }
+
+        // Clear Cart Function
+        function clearCart() {
+            localStorage.removeItem('cart');  // Remove the cart from localStorage
+            displayCartItems();  // Clear the cart display
+        }
+
+        // Call displayCartItems() when the page loads
+        window.onload = displayCartItems;
+    </script>
+
+</body>
+</html>
